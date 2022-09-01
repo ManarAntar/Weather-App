@@ -1,6 +1,6 @@
 let weatherApi;
 let responseApi;
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 let currentLoc = 'Cairo';
 let todayDay;
@@ -56,9 +56,6 @@ function displayWeatherData() {
 function displayNextDayData() {
     for (let i = 0; i < nextDayIcon.length; i++) {
         nextDay[i].innerHTML = days[new Date(responseApi.forecast.forecastday[i + 1].date).getDay()];
-        // nextDay[i].innerHTML = days[todayDay+1];
-        // todayDay++;
-        // console.log(todayDay);
         nextDayIcon[i].setAttribute('src', `https:${responseApi.forecast.forecastday[i + 1].day.condition.icon}`);
         forecastDesc[i].innerHTML = responseApi.forecast.forecastday[i + 1].day.condition.text;
         maxDegree[i].innerHTML = `${responseApi.forecast.forecastday[i + 1].day.maxtemp_c}<sup>o</sup>C`;
