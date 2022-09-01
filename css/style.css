@@ -1,0 +1,232 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    color: #bfc1c8;
+    font-family: "Roboto", "Open Sans", sans-serif;
+    background: rgb(30, 32, 43);
+}
+/* Start Navbar */
+.nav-bg{
+    background-color: #1e202b;
+}
+.navbar img{
+    width:60px;
+    height: 35px;
+}
+.logo-desc p{
+    font-size: 10px;
+    color: #bfc1c8;
+}
+.logo-desc h1{
+    font-size: 16px;
+}
+.navbar ul li a{
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+.navbar ul li a:hover{
+    color: #009ad8 !important;
+    border:2px solid #009ad8;
+}
+.navbar ul li .active{
+    color: #009ad8 !important;
+    border:2px solid #009ad8;
+}
+/* End Navbar */
+
+/* Start header */
+.header{
+   background-image: url('../img/banner.png');
+   background-size: cover;
+   height:60vh; 
+   padding-top: 70px;
+}
+.search-location input[type="text"]{
+    padding: 20px 50px 20px 20px;
+    background: #1e202b;
+    height: 58px;
+}
+.search-location input[type="submit"]{
+   background-color: #009ad8;
+   width: 14%;
+   top:5px;
+   right:5px;
+   bottom:5px;
+}
+/* End header */
+
+/* Start Home */
+.home{
+    top:31%;
+    left: 8%;
+}
+.today-temp, .bg-color{
+    /* background: #1e202b; */
+    background-color: #262936;
+}
+.forecast-header{
+    background: rgba(0, 0, 0, 0.1);
+}
+.temp-content .forecast-desc,.forecast .forecastDesc{
+    color: #009ad8;
+}
+.temp-content .temp .degree{
+    font-size:5.3285714286rem;
+}
+.temp-content .location{
+    font-size: 18px;
+}
+.temp-content .temp .icon{
+    width:110px;
+    height: 100px;
+    margin-right:1px !important;
+}
+.forecast .temp-content .temp .maxDegree{
+    font-size: 24px;
+}
+.forecast .temp-content .temp .minDegree{
+    font-size: 18px;
+}
+.des-icon{
+    margin-left: 14px;
+}
+.empty{
+    height: 330px;
+}
+/* End Home */
+
+/* Start Footer */
+footer{
+    background: #262936;
+}
+footer input[type="text"]{
+    padding: 20px 30px 20px 20px;
+    background: #1e202b;
+    height: 53px;
+}
+footer input[type="submit"]{
+    background-color: #009ad8;
+    width: 14%;
+    top:7px;
+    right:205px;
+    bottom:5px;
+ }
+ footer p{
+     font-size: 14px;
+ }
+ .footer-link a{
+    background: #1e202b;
+    color: #009ad8;
+    width: 40px;
+    height: 40px; 
+    font-size: 20px;
+    line-height: 2;
+    transition: 0.3s ease;
+ }
+ .footer-link a:hover{
+   background-color: #009ad8 !important;
+   color:white;
+   border:2px solid #009ad8;
+}
+/* End Footer */
+
+@media(max-width:768px){
+    .navbar{
+        margin:0 auto !important;
+    }
+   .search-location input[type="submit"] {
+        width: 30%;
+        font-size:14px ;
+    }
+    .search-location input[type="text"] {
+       height: 50px; 
+       font-size:14px ;
+    } 
+    .empty{
+        height: 1100px;
+    }
+    footer .footer-form{
+        margin-bottom: 25px;
+    }
+    footer .footer-form input[type="text"]{
+        width:100% !important;
+        display: block !important;
+        font-size:14px ;
+    }
+    footer .footer-form input[type="submit"]{
+        width: 22%;
+        padding:5px;
+        right:22px;
+        font-size:14px ;
+    }
+    .footer-link{
+        width:80%;
+        margin: auto;
+        font-size: 15px;
+    }
+    .footer-link a{
+        width: 35px;
+        height: 35px; 
+        padding: 9px !important;
+        margin-right: 3px !important;
+     }
+     .home{
+       width:90%;
+       margin: auto;
+       /* top:20%; */
+       left: 6%; 
+       top:18%;
+    }
+}
+@media (min-width:769px) and (max-width:992px){
+    .home{
+        width:90%;
+        margin: auto;
+        top:20%;
+        left:5%; 
+     }
+    .empty{
+        height: 1100px;
+    }
+    .temp-content .temp .degree{
+        font-size: 60px;
+    }
+    .temp-content .temp .icon{
+        width:55px;
+        height: 50px;
+        margin-top: 23px !important;
+    }
+    footer .footer-form{
+        margin-bottom: 25px;
+    }
+    footer .footer-form input[type="text"]{
+        width:100% !important;
+        display: block !important;
+        font-size:14px ;
+    }
+    footer .footer-form input[type="submit"]{
+        width: 22%;
+        padding:5px;
+        right:22px;
+        top:5px;
+        font-size:15px ;
+    }
+    .footer-link{
+        font-size: 15px;
+        margin-top: 4px;
+    }
+    .footer-link a{
+        width: 35px;
+        height: 35px; 
+        padding: 9px !important;
+        margin-right: 3px !important;
+    }
+    .temp-content span{
+        font-size: 14px;
+        margin: 1px !important;
+    }
+}
+
