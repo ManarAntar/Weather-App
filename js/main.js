@@ -1,6 +1,6 @@
 let weatherApi;
 let responseApi;
-let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday",];
+let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let months = ['Jan', 'Feb', 'March', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 let currentLoc = 'Cairo';
 let todayDay;
@@ -32,7 +32,7 @@ async function getWeatherApi() {
     responseApi = await weatherApi.json();
     console.log(responseApi);
     displayWeatherData();
-    displayNextDayData()
+    displayNextDayData();
 }
 getWeatherApi();
 
@@ -40,11 +40,11 @@ getWeatherApi();
 // Display Today Data
 function displayWeatherData() {
     let date = new Date();
-    todayDay=date.getDay();
+    todayDay = date.getDay();
     today.innerHTML = days[todayDay];
     todayDate.innerHTML = `${date.getDate()} ${months[date.getMonth()]}`;
     myLocation.innerHTML = responseApi.location.name;
-    todayDegree.innerHTML = `${responseApi.current.temp_c} ْC`;
+    todayDegree.innerHTML = `${responseApi.current.temp_c}<sup>o</sup>C`;
     todayIcon.setAttribute('src', `http:${responseApi.current.condition.icon}`);
     todayDesc.innerHTML = responseApi.current.condition.text;
     humidty.innerHTML = `${responseApi.current.humidity}%`;
@@ -55,12 +55,14 @@ function displayWeatherData() {
 // Display Nextday Data
 function displayNextDayData() {
     for (let i = 0; i < nextDayIcon.length; i++) {
-        nextDay[i].innerHTML = days[todayDay+1];
-        todayDay++;
+        nextDay[i].innerHTML = days[new Date(responseApi.forecast.forecastday[i + 1].date).getDay()];
+        // nextDay[i].innerHTML = days[todayDay+1];
+        // todayDay++;
+        // console.log(todayDay);
         nextDayIcon[i].setAttribute('src', `https:${responseApi.forecast.forecastday[i + 1].day.condition.icon}`);
         forecastDesc[i].innerHTML = responseApi.forecast.forecastday[i + 1].day.condition.text;
-        maxDegree[i].innerHTML = `${responseApi.forecast.forecastday[i + 1].day.maxtemp_c} ْC`;
-        minDegree[i].innerHTML = `${responseApi.forecast.forecastday[i + 1].day.mintemp_c} ْC`;
+        maxDegree[i].innerHTML = `${responseApi.forecast.forecastday[i + 1].day.maxtemp_c}<sup>o</sup>C`;
+        minDegree[i].innerHTML = `${responseApi.forecast.forecastday[i + 1].day.mintemp_c}<sup>o</sup>C`;
 
     }
 }
@@ -68,6 +70,5 @@ function displayNextDayData() {
 // real Time Search
 searchBar.addEventListener('keyup', function () {
     currentLoc = searchBar.value;
-    console.log(currentLoc);
     getWeatherApi();
 });

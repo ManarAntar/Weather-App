@@ -64,7 +64,6 @@ body{
     left: 8%;
 }
 .today-temp, .bg-color{
-    /* background: #1e202b; */
     background-color: #262936;
 }
 .forecast-header{
@@ -145,6 +144,14 @@ footer input[type="submit"]{
        height: 50px; 
        font-size:14px ;
     } 
+    .temp-content .temp .degree{
+        font-size: 50px;
+    }
+    .temp-content .temp .icon{
+        width:50px;
+        height: 40px;
+        margin-top: 18px !important;
+    }
     .empty{
         height: 1100px;
     }
@@ -197,7 +204,7 @@ footer input[type="submit"]{
     .temp-content .temp .icon{
         width:55px;
         height: 50px;
-        margin-top: 23px !important;
+        margin-top: 20px !important;
     }
     footer .footer-form{
         margin-bottom: 25px;
